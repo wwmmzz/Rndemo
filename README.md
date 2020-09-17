@@ -43,7 +43,7 @@ npm run ios
 
 #### 完成效果如图
 
-![](C:\Users\27044\Desktop\grzc8-0v61k.gif)
+![](grzc8-0v61k.gif)
 
 #### 模拟接口：
 
