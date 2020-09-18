@@ -34,7 +34,7 @@ module.exports = {
   },
   {
     "title":"汉字",
-    "article": "abc"
+    "article": "一二三"
 }
 ]
   },

@@ -53,11 +53,11 @@ export const stackPageData = [
       title: '企业开票',
     }
   },
-  // {
-  //   name: "MyNew1",
-  //   component: MyNew1,
-  //   options: {
-  //     title: '新增一',
-  //   }
-  // },
+  {
+    name: "MyNew1",
+    component: MyNew1,
+    options: {
+      title: '新增一',
+    }
+  },
 ]

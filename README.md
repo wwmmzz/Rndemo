@@ -4,6 +4,21 @@ https://github.com/wwmmzz/Rndemo
 
 ![](grzc8-0v61k.gif)
 
+####  动态路由：
+
+在/TransportHome/index.js中通过路由传参实现渲染不同内容
+
+``` js
+//TransportHome传递参数
+onPress={()=>this.props.navigation.navigate('MyNew1',{params:item.title})|| null}
+
+//New1通过路由参数查询
+const mdata = this.props.data.msg.find(item=>item.title == this.props.route.params.params)
+
+```
+
+
+
 #### 模拟接口：
 
 见mocker/user.mock.js
