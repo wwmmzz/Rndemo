@@ -1,5 +1,7 @@
 #### 完成效果如图
 
+https://github.com/wwmmzz/Rndemo
+
 ![](grzc8-0v61k.gif)
 
 #### 模拟接口：
@@ -26,20 +28,18 @@
 
 #### 接口调用：
 
-见src/page/MyHome/Recommend/index.js
+见src/services/users.js
 
 ````js
-let res = await fetch('http://192.168.56.1:3721/api/recommend', {method: 'GET'});
-
-
-
-export default connect(
-  ({ data}) => ({
-    rdata: data.msg,
-  }),({data})=>({
-    getdata: data.getdata,
-  })
-)(MyRecommend);
+/**
+ * recommend
+ */
+export async function userRecommend(params) {
+  return fetch('/api/recommend', {
+    method: 'GET',
+    body: params,
+  });
+}
 
 ````
 
@@ -48,6 +48,8 @@ export default connect(
 见models/data.js
 
 ``` js
+import { userRecommend } from '../services/users';
+
 export default {
         state:{
             msg:[
@@ -67,6 +69,13 @@ export default {
             },
             
         },
+        effects: {
+            async recommend(){
+                const data =await userRecommend()
+                this.getdata(data)
+            }
+        }
+
         
         }
 ```

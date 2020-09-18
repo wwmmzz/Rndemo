@@ -4,6 +4,8 @@ import DevOptions from '../pages/DevOptions';
 import MyHomeSetting from '../pages/MyHome/Setting';
 import MyRecommend from '../pages/MyHome/Recommend';
 import MyInvoicing from '../pages/MyHome/Invoicing';
+import MyNew1 from '../pages/MyHome/Recommend/New1';
+
 
 export const stackPageData = [
   {
@@ -51,4 +53,11 @@ export const stackPageData = [
       title: '企业开票',
     }
   },
+  // {
+  //   name: "MyNew1",
+  //   component: MyNew1,
+  //   options: {
+  //     title: '新增一',
+  //   }
+  // },
 ]

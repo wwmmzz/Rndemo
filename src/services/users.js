@@ -27,3 +27,13 @@ export async function userLogout(params) {
     body: params,
   });
 }
+
+/**
+ * recommend
+ */
+export async function userRecommend(params) {
+  return fetch('/api/recommend', {
+    method: 'GET',
+    body: params,
+  });
+}

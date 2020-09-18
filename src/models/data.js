@@ -1,3 +1,5 @@
+import { userRecommend } from '../services/users';
+
 export default {
         state:{
             msg:[
@@ -17,6 +19,13 @@ export default {
             },
             
         },
+        effects: {
+            async recommend(){
+                const data =await userRecommend()
+                this.getdata(data)
+            }
+        }
+
         
         }
 

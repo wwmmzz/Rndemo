@@ -18,13 +18,14 @@ class MyRecommend extends Component {
     async componentDidMount(){
         console.log('123')
 
-        let res = await fetch('http://192.168.56.1:3721/api/recommend', {method: 'GET'});
-        console.log('res:', res)
-        let data = await res.json()
-        console.log('data:', data)
-        this.msg.data = JSON.stringify(data.msg)
+        // let res = await fetch('http://192.168.56.1:3721/api/recommend', {method: 'GET'});
+        this.props.recommend()
+        // console.log('res:', res)
+        // let data = await res.json()
+        // console.log('data:', data)
+        // this.msg.data = JSON.stringify(data.msg)
         // console.log('setdata',this.props.setData(data))
-        this.props.getdata(data.msg)
+        // this.props.getdata(data.msg)
         console.log('state',this.msg.data)
         console.log('props', this.props.rdata)
 
@@ -37,7 +38,7 @@ class MyRecommend extends Component {
       <SafeAreaView>
         <View>
         <List
-            data={this.props.rdata}
+            data={this.props.rdata.msg}
             renderItem={({ item, index }) => {
               return (
                 <List.Item
@@ -45,6 +46,7 @@ class MyRecommend extends Component {
                   extra={<Icon name="right" fill="#abb0b5" size={14} />}
                   size="large"
                   paddingLeft={15}
+                  // onPress={this.props.navigation.navigate('MyNew1')|| null}
                 >
                   <View>
                     <Text>{item.title}</Text>
@@ -67,12 +69,9 @@ const mapDispatchToProps = dispatch => ({
 
 export default connect(
   ({ data}) => ({
-    // loading: loading.effects.users,
-    // token: global.token,
-    // formData: users.formData,
     rdata: data.msg,
   }),({data})=>({
-    getdata: data.getdata,
+    recommend: data.recommend
   })
 )(MyRecommend);
 
